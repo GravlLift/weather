@@ -14,6 +14,17 @@
       },
       "outputCapture": "std",
       "port": 9229
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 5006,
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Run Neutralino",
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "smartStep": true
     }
   ]
 }

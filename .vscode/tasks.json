@@ -5,11 +5,21 @@
   "tasks": [
     {
       "type": "npm",
+      "label": "Run npm Build",
       "script": "build",
       "group": {
         "isDefault": true,
         "kind": "build"
       }
+    },
+    {
+      "type": "shell",
+      "label": "Run Neutralino",
+      "windows": {
+        "command": "./neutralino-win.exe"
+      },
+      "dependsOn": "Run npm Build",
+      "isBackground": true
     }
   ]
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col">
+          <h4 id="city-name"></h4>
+          <div id="time"></div>
+          <div id="description"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="conditions" class="col">
+          <span id="temperature"></span>
+          <span id="unit">°F</span>
+        </div>
+        <div class="col">
+          <div>Precipitation: <span id="precipitation"></span>&nbsp;in</div>
+          <div>Humidity: <span id="humidity"></span>%</div>
+          <div>Wind: <span id="wind"></span>&nbsp;mph</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 offset-6">
+          <div class="btn-group btn-group-fill">
+            <!-- <button type="button" class="btn btn-light">Temperature</button>
+            <button type="button" class="btn btn-light">
+              Precipitation
+            </button>
+            <button type="button" class="btn btn-light">Wind</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="chart-wrapper">
+            <div class="chart">
+              <canvas id="tempChart" height="200" width="2500"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pre id="debug" style="white-space: normal; display: none;"></pre>
+    <script src="/neutralino.js"></script>
+    <script src="/assets/main.js"></script>
+  </body>
+</html>
