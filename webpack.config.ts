@@ -2,16 +2,26 @@ import { Configuration } from 'webpack';
 import * as path from 'path';
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+const Dotenv = require('dotenv-webpack');
 
-const env = 'development' as 'development' | 'production';
+const env = 'production' as 'development' | 'production';
 const config: Configuration = {
   mode: env,
-  entry: path.resolve(__dirname, './src/app.ts'),
+  devtool: env == 'development' ? 'inline-source-map' : false,
+  entry: {
+    app: [
+      'regenerator-runtime/runtime',
+      'core-js/stable/promise',
+      'core-js/stable/object/assign',
+      'core-js/stable/number',
+      'dom-node-polyfills',
+      path.resolve(__dirname, './src/app.ts'),
+    ],
+  },
   module: {
     rules: [
       {
-        test: /\.ts?$/,
+        test: /\.ts(x?)$/,
         use: 'ts-loader',
       },
       {
@@ -33,6 +43,7 @@ const config: Configuration = {
     path: path.resolve(__dirname, './app/assets'),
   },
   plugins: [
+    new Dotenv(),
     new CopyPlugin([
       {
         from: `./src/settings.${
@@ -42,7 +53,7 @@ const config: Configuration = {
       },
     ]),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: 'app.css',
     }),
   ],
 };

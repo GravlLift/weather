@@ -1,7 +1,8 @@
+import 'bootstrap';
+import './app.css';
+
 import { getCurrentPosition } from './utils/position';
 import { OpenWeather } from './open-weather/index';
-import 'bootstrap';
-import './styles.css';
 import {
   kelvinToFahrenheit,
   millimetersToInches,
@@ -50,7 +51,6 @@ async function refreshAndRender() {
     position.coords.longitude,
     process.env.OPEN_WEATHER_API_KEY
   );
-
   document.getElementById('city-name').innerText = response.city.name;
 
   setDisplay(response.list[0]);

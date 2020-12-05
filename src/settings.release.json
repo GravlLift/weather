@@ -5,7 +5,6 @@
   "iconfile": "neutralino.png",
   "window": {
     "width": "1000",
-    "height": "700",
-    "fullscreen": false
+    "height": "500"
   }
 }

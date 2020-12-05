@@ -12,14 +12,12 @@
         "kind": "build"
       }
     },
+    // Maybe one day...
     {
       "type": "shell",
-      "label": "Run Neutralino",
-      "windows": {
-        "command": "./neutralino-win.exe"
-      },
-      "dependsOn": "Run npm Build",
-      "isBackground": true
+      "label": "EsBuild",
+      "command": "npx esbuild ./src/app.ts --bundle --outfile=app/assets/app.js --target=es6",
+      "group": "build"
     }
   ]
 }
