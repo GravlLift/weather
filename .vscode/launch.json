@@ -10,7 +10,7 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       "windows": {
-        "runtimeExecutable": "${workspaceFolder}/neutralino-win.exe"
+        "runtimeExecutable": "${workspaceFolder}/weather-win.exe"
       },
       "outputCapture": "std",
       "port": 9229

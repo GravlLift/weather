@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "npm",
-      "label": "Run npm Build",
-      "script": "build",
+      "type": "shell",
+      "label": "Neu Build",
+      "command": "neu build -v",
       "group": {
         "isDefault": true,
         "kind": "build"

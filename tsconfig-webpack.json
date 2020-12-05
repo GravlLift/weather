@@ -1,0 +1,9 @@
+{
+  "exclude": ["webpack.config.ts"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["ES2019.Object", "DOM", "ESNext"],
+    "target": "es5",
+    "esModuleInterop": true
+  }
+}

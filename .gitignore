@@ -1,4 +1,6 @@
 node_modules
-app/**/*
+app/settings.json
+app/assets/*
+!app/assets/neutralino.js
 .log
 .env
