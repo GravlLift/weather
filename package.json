@@ -1,41 +1,49 @@
 {
   "name": "weather",
+  "author": {
+    "email": "jason.gravell@gmail.com",
+    "name": "Jason Gravell"
+  },
   "version": "1.0.0",
   "description": "A simple weather forecast application",
-  "repository": {},
-  "main": "index.js",
-  "scripts": {
-    "build": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/GravlLift/weather.git"
   },
   "license": "ISC",
+  "scripts": {
+    "build": "electron-webpack",
+    "start": "electron-webpack dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.gravllift.weather"
+  },
   "devDependencies": {
-    "@neutralinojs/neu": "^1.7.0",
     "@types/chart.js": "^2.9.28",
+    "@types/ejs": "^3.0.5",
     "@types/luxon": "^1.25.0",
-    "@types/mini-css-extract-plugin": "^1.2.1",
     "@types/node": "^14.14.10",
-    "@types/webpack": "^4.41.25",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.1.2",
-    "cross-env": "^7.0.3",
-    "css-loader": "^3.6.0",
+    "ejs-html-loader": "^4.0.1",
+    "electron": "11.1.0",
+    "electron-builder": "^22.9.1",
+    "electron-webpack": "^2.8.2",
+    "electron-webpack-ts": "^4.0.1",
     "mini-css-extract-plugin": "^0.9.0",
-    "ts-loader": "^6.2.2",
-    "ts-node": "^9.1.0",
-    "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.7",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^4.44.2"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^0.7.0",
-    "dotenv": "^8.2.0",
-    "dotenv-webpack": "^1.8.0",
+    "ejs": "^3.1.5",
     "jquery": "^3.5.1",
     "luxon": "^1.25.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "source-map-support": "^0.5.19"
   }
 }

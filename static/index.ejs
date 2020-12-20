@@ -1,0 +1,42 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="col">
+      <h4><%- cityName %></h4>
+      <div><%- time %></div>
+      <div><%- description %></div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="conditions" class="col-6">
+      <span><%- temperature %></span>
+      <span id="unit">°F</span>
+      <img src="<%- icon %>"></img>
+    </div>
+    <div class="col-6">
+      <div>Precipitation: <span><% precipitation %></span>&nbsp;in</div>
+      <div>Humidity: <span><%- humidity %></span>%</div>
+      <div>Wind: <span><%- wind %></span>&nbsp;mph</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 offset-6">
+      <div class="btn-group btn-group-fill">
+        <!-- <button type="button" class="btn btn-light">Temperature</button>
+        <button type="button" class="btn btn-light">
+          Precipitation
+        </button>
+        <button type="button" class="btn btn-light">Wind</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="chart-wrapper">
+        <div class="chart">
+          <canvas id="tempChart" height="200" width="2500"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pre id="debug" style="white-space: normal; display: none"></pre>
+</div>

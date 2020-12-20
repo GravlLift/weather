@@ -10,30 +10,28 @@ A simple cross-operating system application for displaying current and upcoming 
 npm i
 ```
 
-### Create a .env file in the repository root with your open weather api key
+### Environment configuration
+
+Create a .env file in the repository root with your open weather api key, as well as gps location coordinates
 
 ```
-OPEN_WEATHER_API_KEY=examplekey
+ELECTRON_WEBPACK_APP_OPEN_WEATHER_API_KEY=examplekey
+ELECTRON_WEBPACK_APP_LATITUDE=43.1
+ELECTRON_WEBPACK_APP_LONGITUDE=-65.21
 ```
 
-### Run webpack build
+### Build
 
-For debugging in a browser instance
+Run webpack build (or vs code task `npm: build`)
 
 ```
 npm run build
 ```
 
-For release
+### Run
+
+Execute electron with built TS (or vs launch `Debug Main Process`)
 
 ```
-npm run build:production
-```
-
-### Execute the appropriate neutralino for your OS
-
-```
-neutralino-linux
-neutralino-mac
-neutralino-win.exe
+npx electron ./dist/main/main.js
 ```

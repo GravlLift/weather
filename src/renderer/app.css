@@ -1,0 +1,32 @@
+#temperature {
+  font-size: 64px;
+}
+
+#icon {
+  width: 100px;
+  height: 100px;
+}
+
+#conditions > * {
+  vertical-align: top;
+}
+
+.btn-group.btn-group-fill {
+  display: flex;
+}
+
+.btn-group.btn-group-fill .btn {
+  flex: 1;
+}
+
+.chart-wrapper {
+  overflow-x: auto;
+}
+.chart-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.chart {
+  width: 500vw;
+  height: 200px;
+}

@@ -4,22 +4,28 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "shell",
-      "label": "Neu Build",
-      "command": "neu build -v",
+      "type": "npm",
+      "script": "build",
       "group": {
         "isDefault": true,
         "kind": "build"
-      }
+      },
+      "problemMatcher": [],
+      "label": "npm: build"
     },
     {
-      "type": "shell",
-      "label": "Run Neutralino",
-      "windows": {
-        "command": "./neutralino-win.exe"
-      },
-      "dependsOn": "Run npm Build",
-      "isBackground": true
+      "type": "npm",
+      "script": "dist",
+      "problemMatcher": [],
+      "label": "npm: dist",
+      "detail": "electron-builder"
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "npm: start",
+      "detail": "electron-webpack dev"
     }
   ]
 }

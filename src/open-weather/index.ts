@@ -3,8 +3,11 @@ import {
   CurrentConditionsResponse,
   HourlyResponse,
 } from './models/index';
+import axios from 'axios';
 
-const apiBase = 'https://api.openweathermap.org/data/2.5';
+const client = axios.create({
+  baseURL: 'https://api.openweathermap.org/data/2.5',
+});
 
 export module OpenWeather {
   export async function currentConditions(
@@ -12,10 +15,10 @@ export module OpenWeather {
     lon: number,
     key: string
   ): Promise<CurrentConditionsResponse> {
-    const res = await fetch(
-      `${apiBase}/weather?lat=${lat}&lon=${lon}&appid=${key}`
+    const res = await client.get<CurrentConditionsResponse>(
+      `/weather?lat=${lat}&lon=${lon}&appid=${key}`
     );
-    return res.json();
+    return res.data;
   }
 
   export async function forecast(
@@ -23,10 +26,10 @@ export module OpenWeather {
     lon: number,
     key: string
   ): Promise<HourlyResponse> {
-    const res = await fetch(
-      `${apiBase}/forecast?lat=${lat}&lon=${lon}&appid=${key}`
+    const res = await client.get<HourlyResponse>(
+      `/forecast?lat=${lat}&lon=${lon}&appid=${key}`
     );
-    return res.json();
+    return res.data;
   }
 
   export async function oneCall(
@@ -34,9 +37,9 @@ export module OpenWeather {
     lon: number,
     key: string
   ): Promise<OneCallResponse> {
-    const res = await fetch(
-      `${apiBase}/onecall?lat=${lat}&lon=${lon}&appid=${key}`
+    const res = await client.get<OneCallResponse>(
+      `/onecall?lat=${lat}&lon=${lon}&appid=${key}`
     );
-    return res.json();
+    return res.data;
   }
 }
