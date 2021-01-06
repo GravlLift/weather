@@ -36,7 +36,7 @@
     "webpack": "^4.44.2"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.4",
     "chartjs-plugin-datalabels": "^0.7.0",
